@@ -1,9 +1,9 @@
-// app/view/(panel)/dashboard/page.tsx
+// app/view/(panel)/contributions/page.tsx
 import { Metadata } from "next";
 import ContributionsView from "./contributions_view";
 
 export const metadata: Metadata = {
-  title: "Dashboard",
+  title: "Contributions",
   description: "Overview of your class contributions and expenses.",
 };
 
