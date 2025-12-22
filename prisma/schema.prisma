@@ -1,22 +1,45 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// prisma/schema.prisma
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"   // no URL here!
+  provider = "mysql"
+  
 }
 
 model User {
+  id         Int      @id @default(autoincrement())
+  firstName  String
+  middleName String?
+  lastName   String
+  suffix     String?
+
+  email      String   @unique
+  password   String
+  status     String   @default("active")
+
+  // FIX: Relation updated to point to "Section"
+  sectionId  Int?
+  section    Section? @relation(fields: [sectionId], references: [id])
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("user")
+}
+
+model Section {
   id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
+  
+  // FIX: Added @unique so we can "Find or Create" safely
+  name      String   @unique 
+
+  users     User[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("section")
 }

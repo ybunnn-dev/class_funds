@@ -7,3 +7,14 @@
 @theme {
   /* You can also define variables here in the future */
 }
+
+body > [data-nextjs-toast],
+body > [data-nextjs-scroll-restoration-position],
+#next-route-announcer {
+  display: none !important;
+}
+
+/* If it is the new floating toolbar */
+div:has(> svg[aria-label="Next.js logomark"]) {
+  display: none !important;
+}
