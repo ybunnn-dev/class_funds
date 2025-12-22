@@ -4,7 +4,7 @@ import prisma from "@/app/lib/prisma";
 import bcrypt from "bcrypt";
 
 const handler = NextAuth({
-  debug: true, // ✅ Enable debug mode
+  debug: true, // Enable debug mode
   
   providers: [
     CredentialsProvider({
@@ -36,7 +36,7 @@ const handler = NextAuth({
 
           return null;
         } catch (error) {
-          console.error("❌ Authorize error:", error); // Catch DB errors
+          console.error("Authorize error:", error); // Catch DB errors
           return null;
         }
       },
