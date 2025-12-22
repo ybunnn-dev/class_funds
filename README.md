@@ -172,6 +172,7 @@ npm run deps    # List project dependencies
 ## 📱 Screenshots
 
 ![Dashboard](screenshots/dashboard.png)
+![Contributions](screenshots/contributions.png)
 
 ---
 
