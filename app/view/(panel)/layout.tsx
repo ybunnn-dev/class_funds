@@ -14,7 +14,6 @@ import {
   X 
 } from "lucide-react";
 
-// Renamed from DashboardLayout to PanelLayout to reflect its broader use
 export default function PanelLayout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
@@ -74,7 +73,6 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
         {/* User Profile / Logout */}
         <div className="absolute bottom-0 w-full border-t border-gray-100 p-4">
           <button 
-            // 2. Add the onClick handler
             onClick={() => signOut({ callbackUrl: "/view/auth/login" })}
             className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-color_red hover:bg-red-50 transition-colors"
           >

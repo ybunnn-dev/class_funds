@@ -3,40 +3,43 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/app/lib/prisma";
 import bcrypt from "bcrypt";
 
-const handler = NextAuth({
-  debug: true, // Enable debug mode
+const { handlers, auth, signIn, signOut } = NextAuth({
+  debug: true,
   
   providers: [
     CredentialsProvider({
+
+      name: "Credentials",
       credentials: {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, _request: Request) {
+
+      async authorize(credentials) {
         try {
           if (!credentials?.email || !credentials?.password) return null;
 
-          console.log("🔍 Looking up user:", credentials.email); // Debug
+          console.log("🔍 Looking up user:", credentials.email);
 
           const user = await prisma.user.findUnique({
             where: { email: credentials.email as string },
             include: { section: true },
           });
 
-          console.log("👤 User found:", !!user); // Debug
+          console.log("👤 User found:", !!user);
 
           if (user && await bcrypt.compare(credentials.password as string, user.password)) {
             return {
               id: user.id.toString(),
               name: `${user.firstName} ${user.lastName}`,
               email: user.email,
-              section: user.section?.name,
+              section: user.section?.name, 
             };
           }
 
           return null;
         } catch (error) {
-          console.error("Authorize error:", error); // Catch DB errors
+          console.error("Authorize error:", error);
           return null;
         }
       },
@@ -51,24 +54,25 @@ const handler = NextAuth({
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        (token as any).id = user.id;
-        (token as any).section = (user as any).section;
+        // user is only available on the first call (login)
+        token.id = user.id;
+        token.section = (user as any).section;
       }
       return token;
     },
     
     async session({ session, token }) {
-      if (token) {
-        (session.user as any).id = (token as any).id;
-        (session.user as any).section = (token as any).section;
+      if (token && session.user) {
+        (session.user as any).id = token.id;
+        (session.user as any).section = token.section;
       }
       return session;
     },
   },
 
   pages: {
-    signIn: "/auth",
+    signIn: "/view/auth/login", 
   },
 });
 
-export { handler as GET, handler as POST };
+export const { GET, POST } = handlers;
