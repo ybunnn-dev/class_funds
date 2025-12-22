@@ -1,6 +1,7 @@
 "use client";
 
 import { Plus, Calendar } from "lucide-react";
+import AddContributionModal from "../modals/add_contribution_modal";
 
 export default function ContributionsTable() {
   return (
@@ -8,10 +9,7 @@ export default function ContributionsTable() {
       {/* Table Header with Add Button */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
         <h3 className="font-semibold text-text_heavy">Contribution Events</h3>
-        <button className="flex items-center gap-2 bg-text_heavy text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-opacity-90 transition-colors">
-          <Plus size={16} />
-          Add Contribution
-        </button>
+        <AddContributionModal />
       </div>
 
       <div className="overflow-x-auto">
@@ -20,7 +18,7 @@ export default function ContributionsTable() {
             <tr>
                 <th className="px-6 py-3">Contribution Name</th>
                 <th className="px-6 py-3">Total Collected</th>
-                <th className="px-6 py-3">Total Target</th> {/* New Column */}
+                <th className="px-6 py-3">Total Target</th>
                 <th className="px-6 py-3">Amount / Head</th>
                 <th className="px-6 py-3">Paid Ratio</th>
                 <th className="px-6 py-3">Last Updated</th>
@@ -29,11 +27,10 @@ export default function ContributionsTable() {
           </thead>
           <tbody className="divide-y divide-gray-100">
             
-            {/* Row 1: Active/Healthy Contribution */}
             <tr className="hover:bg-gray-50/50 transition-colors cursor-pointer">
               <td className="px-6 py-4 font-medium text-text_heavy">Christmas Party</td>
               <td className="px-6 py-4 font-medium text-green-600">₱ 8,400.00</td>
-              <td className="px-6 py-4 text-text_semi">₱ 9,000.00</td> {/* Target */}
+              <td className="px-6 py-4 text-text_semi">₱ 9,000.00</td>
               <td className="px-6 py-4 text-text_semi">₱ 200.00</td>
               <td className="px-6 py-4">
                 <div className="flex items-center gap-2">
@@ -52,11 +49,10 @@ export default function ContributionsTable() {
               </td>
             </tr>
 
-            {/* Row 2: Low Participation */}
             <tr className="hover:bg-gray-50/50 transition-colors cursor-pointer">
               <td className="px-6 py-4 font-medium text-text_heavy">Class T-Shirt</td>
               <td className="px-6 py-4 font-medium text-green-600">₱ 3,000.00</td>
-              <td className="px-6 py-4 text-text_semi">₱ 13,500.00</td> {/* Target */}
+              <td className="px-6 py-4 text-text_semi">₱ 13,500.00</td>
               <td className="px-6 py-4 text-text_semi">₱ 300.00</td>
               <td className="px-6 py-4">
                 <div className="flex items-center gap-2">
@@ -75,11 +71,10 @@ export default function ContributionsTable() {
               </td>
             </tr>
 
-             {/* Row 3: Completed/Past */}
             <tr className="hover:bg-gray-50/50 transition-colors cursor-pointer">
               <td className="px-6 py-4 font-medium text-text_heavy">Midterm Printables</td>
               <td className="px-6 py-4 font-medium text-green-600">₱ 2,250.00</td>
-              <td className="px-6 py-4 text-text_semi">₱ 2,250.00</td> {/* Target */}
+              <td className="px-6 py-4 text-text_semi">₱ 2,250.00</td>
               <td className="px-6 py-4 text-text_semi">₱ 50.00</td>
               <td className="px-6 py-4">
                 <div className="flex items-center gap-2">
