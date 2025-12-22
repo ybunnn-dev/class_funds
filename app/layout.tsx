@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google"; // 1. Import the font
-import "./globals.css"; // 2. Ensure your CSS is imported
+import { Montserrat } from "next/font/google";
+import "./globals.css";
+import { Providers } from "./providers"; 
 
-// 3. Configure the font
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-montserrat", // This matches your Tailwind config
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -20,9 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* 4. Add the variable to the body class */}
       <body className={`${montserrat.variable} font-sans antialiased`}>
-        {children}
+        {/* <Providers> */}
+          {children}
+        {/* </Providers> */}
       </body>
     </html>
   );

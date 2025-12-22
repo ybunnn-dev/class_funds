@@ -6,7 +6,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  
+  url      = env("DATABASE_URL")  
 }
 
 model User {
@@ -20,7 +20,6 @@ model User {
   password   String
   status     String   @default("active")
 
-  // FIX: Relation updated to point to "Section"
   sectionId  Int?
   section    Section? @relation(fields: [sectionId], references: [id])
 
@@ -32,8 +31,6 @@ model User {
 
 model Section {
   id        Int      @id @default(autoincrement())
-  
-  // FIX: Added @unique so we can "Find or Create" safely
   name      String   @unique 
 
   users     User[]

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-import SignUpForm from "./sign_up_form"; // Import your new form
+import SignUpForm from "./sign_up_form"; 
 
 export default function AuthPage() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -16,6 +16,7 @@ export default function AuthPage() {
     setError("");
     setLoading(true);
 
+    // Ensure you have configured next-auth in app/api/auth/[...nextauth]/route.ts
     const res = await signIn("credentials", {
       redirect: false,
       email,
@@ -23,27 +24,32 @@ export default function AuthPage() {
     });
 
     setLoading(false);
-    if (res?.error) setError("Invalid credentials");
-    else window.location.href = "/dashboard";
+    
+    if (res?.error) {
+      setError("Invalid credentials");
+    } else {
+      // FIX 1: Updated to match your actual folder structure
+      window.location.href = "/view/dashboard";
+    }
   };
 
   return (
     <div className="relative min-h-screen w-full flex overflow-hidden bg-gray-50 font-sans">
       
-      {/* 1. SIGN UP FORM CONTAINER (Positioned on the Left) */}
-      {/* We use logic to fade it out when not active so it doesn't interfere with clicks */}
+      {/* 1. SIGN UP FORM CONTAINER (Left side) */}
+      {/* FIX 2: Removed 'hidden' so it works on mobile. Added 'w-full' for mobile width. */}
       <div 
-        className={`hidden lg:flex w-1/2 flex-col justify-center items-center transition-opacity duration-500 absolute left-0 h-full z-10 
+        className={`flex w-full lg:w-1/2 flex-col justify-center items-center transition-all duration-500 absolute left-0 h-full z-20 lg:z-10 bg-gray-50
         ${isSignUp ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
       >
         <SignUpForm onLoginClick={() => setIsSignUp(false)} />
       </div>
 
-
-      {/* 2. LOGIN FORM CONTAINER (Positioned on the Right) */}
+      {/* 2. LOGIN FORM CONTAINER (Right side) */}
+      {/* Added logic to hide completely on mobile when signing up so they don't overlap */}
       <div 
-        className={`w-full lg:w-1/2 flex flex-col justify-center items-center transition-opacity duration-500 absolute right-0 h-full z-10 bg-white lg:bg-transparent
-        ${!isSignUp ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none lg:opacity-0"}`}
+        className={`w-full lg:w-1/2 flex flex-col justify-center items-center transition-all duration-500 absolute right-0 h-full z-20 lg:z-10 bg-white lg:bg-transparent
+        ${!isSignUp ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
       >
         <div className="w-full max-w-md space-y-8 bg-white px-8 py-12 rounded-xl">
           <div className="text-left">
@@ -92,7 +98,7 @@ export default function AuthPage() {
             </button>
           </form>
 
-          {/* DIVIDER AND SIGN UP TOGGLE */}
+          {/* Divider */}
           <div className="relative mt-8">
             <div className="absolute inset-0 flex items-center" aria-hidden="true">
               <div className="w-full border-t border-gray-200"></div>
@@ -102,6 +108,7 @@ export default function AuthPage() {
             </div>
           </div>
 
+          {/* Mobile Switch Button */}
           <div className="mt-6">
             <button
               onClick={() => setIsSignUp(true)}
@@ -113,21 +120,17 @@ export default function AuthPage() {
         </div>
       </div>
 
-
-      {/* 3. SLIDING BRANDING OVERLAY (The Moving Panel) */}
+      {/* 3. SLIDING BRANDING OVERLAY (Desktop Only) */}
       <div 
         className={`hidden lg:flex flex-col justify-center items-center bg-light_coffee absolute top-0 w-1/2 h-full z-40 transition-transform duration-700 ease-in-out shadow-2xl overflow-hidden
         ${isSignUp ? "translate-x-full" : "translate-x-0"}`}
       >
-        {/* Decorative Blobs */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-mocha rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-light_brown rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
 
-        {/* Dynamic Text Content */}
         <div className="relative z-10 text-center px-12">
           <h1 className="text-5xl font-bold text-text_heavy mb-6">Class Funds</h1>
           
-          {/* Text changes based on state */}
           <div className="relative h-16 w-full"> 
              <p className={`text-xl text-text_semi transition-opacity duration-300 absolute w-full top-0 ${isSignUp ? "opacity-0" : "opacity-100"}`}>
                Manage your class finances with transparency and ease.
@@ -137,7 +140,6 @@ export default function AuthPage() {
              </p>
           </div>
           
-          {/* Back to Login Button (Inside Overlay) */}
           <button 
              onClick={() => setIsSignUp(!isSignUp)}
              className="mt-8 px-8 py-2 border-2 border-text_heavy text-text_heavy rounded-full font-semibold hover:bg-text_heavy hover:text-white transition-colors"
