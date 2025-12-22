@@ -53,7 +53,7 @@ Built with **Next.js 16 (App Router)**, **Prisma**, **MySQL**, and **Tailwind CS
 ### 1. Clone & Install
 
 ```bash
-git clone <https://github.com/ybunnn-dev/class_funds.git>
+git clone https://github.com/ybunnn-dev/class_funds.git
 cd class_funds
 npm install
 ```
