@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { signOut } from "next-auth/react"; // 1. Import signOut
+import { signOut } from "next-auth/react"; 
 import { 
   LayoutDashboard, 
   Wallet, 
@@ -27,21 +27,16 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
 
   return (
     <div className="flex h-screen bg-gray-50 font-sans text-text_heavy overflow-hidden">
-      
-      {/* MOBILE OVERLAY */}
       {isSidebarOpen && (
         <div 
           className="fixed inset-0 z-20 bg-black/50 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
-
-      {/* SIDEBAR */}
       <aside 
         className={`fixed inset-y-0 left-0 z-30 w-64 bg-white border-r border-gray-200 transform transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 
         ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        {/* Logo Area */}
         <div className="flex h-16 items-center justify-center border-b border-gray-100 bg-light_coffee/10">
           <h1 className="text-2xl font-bold text-text_heavy tracking-tight">
             Class<span className="text-light_brown">Funds</span>
