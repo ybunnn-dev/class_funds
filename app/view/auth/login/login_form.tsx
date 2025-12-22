@@ -29,7 +29,7 @@ export default function AuthPage() {
       setError("Invalid credentials");
     } else {
       // FIX 1: Updated to match your actual folder structure
-      window.location.href = "/view/dashboard";
+      window.location.href = "/view/panel/dashboard";
     }
   };
 
