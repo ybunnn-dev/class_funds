@@ -20,8 +20,8 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
 
   const navItems = [
     { name: "Overview", href: "/view/dashboard", icon: LayoutDashboard },
-    { name: "Contributions", href: "/view/contributions", icon: Wallet },
-    { name: "Class List", href: "/view/section", icon: Users }, 
+    { name: "Contributions", href: "/view/contributions/list", icon: Wallet },
+    { name: "Class List", href: "/view/student/list", icon: Users }, 
     { name: "Settings", href: "/view/settings", icon: Settings },
   ];
 
