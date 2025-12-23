@@ -5,22 +5,13 @@ import { Plus, Calendar } from "lucide-react";
 export default function ProfileCard() {
   return (
     <div className="w-full mx-auto bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-      
-      {/* 1. THE BANNER */}
       <div 
         className="h-32 sm:h-48 w-full bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/bg.jpg')" }}
       >
       </div>
-
-      {/* 2. THE CONTENT SECTION */}
       <div className="px-6 pb-6 relative">
-        
-        {/* Changed: Added lg:flex-row and items-center for mobile centering */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start">
-            
-          {/* 3. PROFILE PICTURE */}
-          {/* Changed: Adjusted negative margin breakpoint to match layout */}
           <div className="-mt-12 lg:-mt-16 flex-shrink-0 relative z-10">
             <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-4 border-white bg-blue-100 flex items-center justify-center overflow-hidden">
                 <span className="text-3xl font-bold text-blue-500">JB</span>
@@ -32,15 +23,10 @@ export default function ProfileCard() {
               </svg>
             </button>
           </div>
-
-          {/* 4. TEXT INFORMATION */}
-          {/* Changed: Added text-center for mobile, text-left for lg+ */}
           <div className="mt-4 lg:mt-4 lg:ml-6 flex-grow text-center lg:text-left">
             <h1 className="text-2xl font-semibold text-gray-800">
               John Ivan B. Belaro
             </h1>
-
-            {/* Changed: Added justify-center for mobile */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-3 text-sm text-gray-600">
               
               <div className="bg-orange-500 text-white px-3 py-1 rounded-md flex items-center gap-2 font-medium">
@@ -62,8 +48,6 @@ export default function ProfileCard() {
 
             </div>
           </div>
-
-          {/* 5. EDIT BUTTON */}
           <div className="mt-4 lg:mt-6 lg:ml-auto">
              <button className="border border-blue-400 text-blue-500 hover:bg-blue-50 p-2 rounded-lg transition">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
