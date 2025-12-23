@@ -19,10 +19,30 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
 
   const navItems = [
-    { name: "Overview", href: "/view/dashboard", icon: LayoutDashboard },
-    { name: "Contributions", href: "/view/contributions/list", icon: Wallet },
-    { name: "Class List", href: "/view/student/list", icon: Users }, 
-    { name: "My Profile", href: "/view/profile", icon: Settings },
+    { 
+      name: "Overview", 
+      href: "/view/dashboard", 
+      icon: LayoutDashboard,
+      root: "/view/dashboard" 
+    },
+    { 
+      name: "Contributions", 
+      href: "/view/contributions/list", 
+      icon: Wallet,
+      root: "/view/contributions" 
+    },
+    { 
+      name: "Class List", 
+      href: "/view/student/list", 
+      icon: Users,
+      root: "/view/student"
+    }, 
+    { 
+      name: "My Profile", 
+      href: "/view/profile", 
+      icon: Settings,
+      root: "/view/profile" 
+    },
   ];
 
   return (
@@ -42,12 +62,10 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
             Class<span className="text-light_brown">Funds</span>
           </h1>
         </div>
-
-        {/* Navigation Links */}
         <nav className="mt-6 px-4 space-y-2">
           {navItems.map((item) => {
-            // Check if the current path starts with the link href (handles sub-pages)
-            const isActive = pathname.startsWith(item.href);
+            const isActive = pathname.startsWith(item.root);
+            
             return (
               <Link 
                 key={item.name} 
@@ -64,8 +82,6 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
             );
           })}
         </nav>
-
-        {/* User Profile / Logout */}
         <div className="absolute bottom-0 w-full border-t border-gray-100 p-4">
           <button 
             onClick={() => signOut({ callbackUrl: "/view/auth/login" })}
@@ -76,15 +92,10 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
           </button>
         </div>
       </aside>
-
-      {/* MAIN CONTENT AREA */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        
-        {/* TOP BAR (Mobile Toggle & Title) */}
         <header className="flex h-16 items-center justify-between bg-white px-6 border-b border-gray-100 lg:hidden">
           <span className="font-semibold text-lg">
-             {/* Dynamic Header Title based on current route */}
-             {navItems.find(i => pathname.startsWith(i.href))?.name || "Dashboard"}
+             {navItems.find(i => pathname.startsWith(i.root))?.name || "Dashboard"}
           </span>
           <button 
             onClick={() => setSidebarOpen(!isSidebarOpen)} 
@@ -93,8 +104,6 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
             {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </header>
-
-        {/* SCROLLABLE PAGE CONTENT */}
         <main className="flex-1 overflow-y-auto p-4 sm:p-8">
           {children}
         </main>

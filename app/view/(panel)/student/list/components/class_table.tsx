@@ -2,11 +2,14 @@
 
 import { Plus, Calendar } from "lucide-react";
 import AddStudentModal from "../modals/add_student_modal";
+import { useRouter } from "next/navigation";
+
 
 export default function ContributionsTable() {
+  const router = useRouter();
+
   return (
     <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-      {/* Table Header with Add Button */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
         <h3 className="font-semibold text-text_heavy">Students List</h3>
         <AddStudentModal />
@@ -25,7 +28,10 @@ export default function ContributionsTable() {
           </thead>
           <tbody className="divide-y divide-gray-100">
             
-            <tr className="hover:bg-gray-50/50 transition-colors cursor-pointer">
+            <tr 
+              onClick={() => router.push('../student/profile')} 
+              className="hover:bg-gray-50/50 transition-colors cursor-pointer"
+            >
               <td className="px-6 py-4 font-medium text-text_heavy">John Doe</td>
               <td className="px-6 py-4 font-medium text-green-600">Christmas Party</td>
               <td className="px-6 py-4 text-text_semi flex items-center gap-1">
@@ -43,7 +49,6 @@ export default function ContributionsTable() {
                 </div>
               </td>
               <td className="px-6 py-4 text-text_light">Dec 20, 2024</td>
-              
             </tr>
 
             <tr className="hover:bg-gray-50/50 transition-colors cursor-pointer">
@@ -89,8 +94,6 @@ export default function ContributionsTable() {
           </tbody>
         </table>
       </div>
-      
-      {/* Pagination Footer */}
       <div className="bg-gray-50 px-6 py-3 border-t border-gray-100 flex items-center justify-between">
           <span className="text-xs text-text_light">Showing 3 active contributions</span>
           <div className="flex gap-2">

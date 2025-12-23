@@ -29,8 +29,6 @@ export default function AddStudentModal() {
       {/* 2. Modal Overlay (Only shows if isOpen is true) */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          
-          {/* Custom Animation Style */}
           <style jsx>{`
             @keyframes modalPop {
               0% { opacity: 0; transform: scale(0.95) translateY(10px); }
@@ -43,19 +41,13 @@ export default function AddStudentModal() {
             .animate-modal { animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
             .animate-fade { animation: fadeIn 0.2s ease-out forwards; }
           `}</style>
-
-          {/* Backdrop (No Blur, just darken) */}
           <div 
             className="fixed inset-0 bg-black/50 animate-fade"
             onClick={() => setIsOpen(false)}
           />
-
-          {/* Modal Content */}
           <div className="relative bg-white rounded-xl shadow-xl w-full max-w-md overflow-hidden animate-modal">
-            
-            {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-              <h3 className="font-semibold text-lg text-text_heavy">Add New Contribution</h3>
+              <h3 className="font-semibold text-lg text-text_heavy">Add Student</h3>
               <button 
                 onClick={() => setIsOpen(false)}
                 className="text-gray-400 hover:text-gray-600 transition-colors p-1 hover:bg-gray-100 rounded-full"
