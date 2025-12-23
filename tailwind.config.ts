@@ -21,6 +21,7 @@ const config: Config = {
         text_semi: "#566A7F",
         text_heavy: "#1C274C",
         text_light: "#697A8D",
+        purple_light: "#BB8ED0",
       },
     },
   },
