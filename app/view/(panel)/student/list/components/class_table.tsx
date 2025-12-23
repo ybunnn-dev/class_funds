@@ -1,18 +1,47 @@
 "use client";
 
-import { Plus, Calendar } from "lucide-react";
+import { Calendar, Search, Filter, ArrowUpDown } from "lucide-react";
 import AddStudentModal from "../modals/add_student_modal";
 import { useRouter } from "next/navigation";
 
-
-export default function ContributionsTable() {
+export default function StudentsTable() {
   const router = useRouter();
 
   return (
     <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-      <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-        <h3 className="font-semibold text-text_heavy">Students List</h3>
-        <AddStudentModal />
+      
+      {/* UPDATED HEADER: Title + Search + Filters + Add Button */}
+      <div className="p-6 border-b border-gray-100 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <h3 className="font-semibold text-text_heavy text-lg">Students List</h3>
+
+        <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+          
+          {/* Search Bar */}
+          <div className="relative flex-grow sm:flex-grow-0">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            <input 
+              type="text" 
+              placeholder="Search student..." 
+              className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all"
+            />
+          </div>
+
+          {/* Filter & Sort Group */}
+          <div className="flex gap-2">
+            <button className="flex items-center justify-center gap-2 px-3 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors flex-1 sm:flex-none">
+              <Filter size={16} />
+              <span className="hidden xl:inline">Filter</span>
+            </button>
+            <button className="flex items-center justify-center gap-2 px-3 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors flex-1 sm:flex-none">
+              <ArrowUpDown size={16} />
+              <span className="hidden xl:inline">Sort</span>
+            </button>
+            
+            {/* Add Student Modal (Kept here) */}
+            <AddStudentModal />
+          </div>
+
+        </div>
       </div>
 
       <div className="overflow-x-auto">

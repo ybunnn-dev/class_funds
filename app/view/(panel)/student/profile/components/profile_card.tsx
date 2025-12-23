@@ -4,7 +4,7 @@ import { Edit2 } from "lucide-react";
 
 export default function ProfileCard() {
   return (
-    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow row-span-2 flex flex-col items-center">
+    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow row-span-1 flex flex-col items-center">
       <div className="w-30 h-30 mb-4 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden border border-gray-100">
         <svg 
             version="1.0" 
@@ -22,7 +22,9 @@ export default function ProfileCard() {
       </div>
 
       <h1 className="text-xl font-bold text-text_heavy text-center">Full Name</h1>
-      <h3 className="text-sm font-medium text-gray-500 mt-1 mb-4 text-center">He/Him</h3>
+      <h3 className="text-sm font-medium text-gray-500 mt-1 text-center">He/Him</h3>
+      <p className="text-xs text-gray-400 mt-1 mb-6 text-center">Joined December 2024</p>
+      
       <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-text_heavy rounded-lg transition-colors font-medium">
         <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center border border-gray-200">
           <Edit2 size={14} className="text-text_light" />

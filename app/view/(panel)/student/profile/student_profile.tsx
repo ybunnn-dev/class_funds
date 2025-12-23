@@ -3,18 +3,21 @@
 import { Edit2 } from "lucide-react";
 
 import ProfileCard from "./components/profile_card";
+import ProgressCard from "./components/progress";
+import TransactionsCard from "./components/transaction_table";
 
 export default function StudentProfilePage() {
     return (
-        <div className="grid grid-cols-1 xl:grid-cols-4 gap-3">
-            <div className="col-span-1 grid grid-rows-5 gap-3">
-                <ProfileCard />
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow row-span-1"></div>
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow row-span-1"></div>
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow row-span-1"></div>
+        <div className="space-y-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <h2 className="text-2xl font-bold text-text_heavy"><u>IT - 4B</u> / <span>John Doe</span></h2>
             </div>
-            <div className="col-span-1 xl:col-span-3 bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-
+            <div className="grid grid-cols-1 xl:grid-cols-4 gap-3">
+                <div className="col-span-1 grid grid-rows-2 gap-3">
+                    <ProfileCard />
+                    <ProgressCard />
+                </div>
+                <TransactionsCard />
             </div>
         </div>
     );
