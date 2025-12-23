@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import StudentProfileView from "./student_profile";
 
 export const metadata: Metadata = {
-  title: "Section",
+  title: "Student | John Doe",
   description: "Overview of your classmates/students.",
 };
 
