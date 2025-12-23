@@ -7,14 +7,8 @@ import ProfileCard from './components/profile_card';
 export default function ProfilePage() {
     return (
         <div className="grid grid-cols-1 gap-6">
-            
-            {/* Top Profile Section */}
             <ProfileCard />
-
-            {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                
-                {/* Card 1: Total Students */}
                 <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between h-40">
                     <div className="flex justify-between items-start">
                         <div>
@@ -29,8 +23,6 @@ export default function ProfilePage() {
                         <span>+12 this month</span>
                     </div>
                 </div>
-
-                {/* Card 2: Cash on Hand */}
                 <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between h-40">
                     <div className="flex justify-between items-start">
                         <div>
@@ -45,8 +37,6 @@ export default function ProfilePage() {
                         <span>Updated just now</span>
                     </div>
                 </div>
-
-                {/* Card 3: Contribution Events (Progress) */}
                 <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between h-40">
                     <div className="flex justify-between items-start mb-2">
                         <div>
@@ -59,8 +49,6 @@ export default function ProfilePage() {
                             <CalendarCheck className="w-6 h-6" />
                         </div>
                     </div>
-                    
-                    {/* Progress Bar Section */}
                     <div className="w-full mt-auto">
                         <div className="flex justify-between text-xs mb-1 text-gray-500">
                             <span>Completion Rate</span>
@@ -76,8 +64,6 @@ export default function ProfilePage() {
                 </div>
 
             </div>
-
-            {/* Bottom History Table */}
             <HistoryTable />
         </div>
     )
