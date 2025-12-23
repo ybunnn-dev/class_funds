@@ -174,6 +174,7 @@ npm run deps    # List project dependencies
 ![Dashboard](screenshots/dashboard.png)
 ![Contributions](screenshots/contributions.png)
 ![Students](screenshots/students.png)
+![Profile](screenshots/profile.png)
 ---
 
 ## 🤝 Contributing
