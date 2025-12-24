@@ -1,12 +1,13 @@
 "use client";
 
 import { Edit2 } from "lucide-react";
+import Contribution from "../../../../svgs/contribution";
 
 export default function ContributionProfileCard() {
   return (
     <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow row-span-1 flex flex-col items-center">
       <div className="w-30 h-30 mb-4 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden border border-gray-100">
-        
+        <Contribution />
       </div>
 
       <h1 className="text-xl font-bold text-text_heavy text-center">Christmas Party</h1>
