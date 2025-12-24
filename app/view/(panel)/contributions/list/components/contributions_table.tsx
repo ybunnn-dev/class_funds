@@ -36,8 +36,6 @@ export default function ContributionsTable() {
               <ArrowUpDown size={16} />
               <span className="hidden xl:inline">Sort</span>
             </button>
-            
-            {/* Add Contribution Modal */}
             <AddContributionModal />
           </div>
 

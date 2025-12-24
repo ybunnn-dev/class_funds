@@ -4,6 +4,7 @@ import { Calendar, Search, Filter, ArrowUpDown } from "lucide-react";
 //import AddContributionModal from "../modals/add_contribution_modal";
 import { useRouter } from "next/navigation";
 import ContributionCard from "./components/contribution_detail_card";
+import ContributionsCard from "./components/contributions_list";
 
 export default function ContributionDetailPage() {
   const router = useRouter();
@@ -24,6 +25,7 @@ export default function ContributionDetailPage() {
                 <div className="col-span-1 bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow"></div>
             </div>
         </div>
+        <ContributionsCard />
     </div>
   );
 }
