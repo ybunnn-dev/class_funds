@@ -5,14 +5,10 @@ import { Calendar, Search, Filter, ArrowUpDown } from "lucide-react";
 export default function HistoryTable() {
   return (
     <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-      
-      {/* UPDATED HEADER: Title + Search + Filters */}
       <div className="p-6 border-b border-gray-100 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <h3 className="font-semibold text-text_heavy text-lg">Recent Transactions</h3>
 
         <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-          
-          {/* Search Bar */}
           <div className="relative flex-grow sm:flex-grow-0">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input 
@@ -21,8 +17,6 @@ export default function HistoryTable() {
               className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all"
             />
           </div>
-
-          {/* Filter & Sort Buttons */}
           <div className="flex gap-2">
             <button className="flex items-center justify-center gap-2 px-3 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors flex-1 sm:flex-none">
               <Filter size={16} />
@@ -61,7 +55,6 @@ export default function HistoryTable() {
                 </span>
               </td>
             </tr>
-            {/* Sample Row 2 */}
             <tr className="hover:bg-gray-50/50">
               <td className="px-6 py-4 font-medium text-text_heavy">Class Treasurer</td>
               <td className="px-6 py-4 text-text_semi">Photocopy Paper Purchase</td>
@@ -73,7 +66,6 @@ export default function HistoryTable() {
                 </span>
               </td>
             </tr>
-            {/* Sample Row 3 */}
             <tr className="hover:bg-gray-50/50">
               <td className="px-6 py-4 font-medium text-text_heavy">Pedro Penduko</td>
               <td className="px-6 py-4 text-text_semi">Late Penalty</td>
