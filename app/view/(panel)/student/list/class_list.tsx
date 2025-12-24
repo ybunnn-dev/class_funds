@@ -6,8 +6,6 @@ import ClassTable from "./components/class_table";
 export default function ClassListPage() {
   return (
     <div className="space-y-8">
-      
-      {/* HEADER SECTION */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold text-text_heavy">Class List | IT-4B</h2>
@@ -15,7 +13,6 @@ export default function ClassListPage() {
             Manage and track all student payments and class funds.
           </p>
         </div>
-        {/* Optional: Add Filter/Export buttons here later */}
       </div>
 
       {/* STATS GRID */}

@@ -36,8 +36,6 @@ export default function StudentsTable() {
               <ArrowUpDown size={16} />
               <span className="hidden xl:inline">Sort</span>
             </button>
-            
-            {/* Add Student Modal (Kept here) */}
             <AddStudentModal />
           </div>
 
