@@ -18,8 +18,6 @@ export const UserModel = {
     });
   },
 
-  // FIX: specific type for 'data' is safer than 'any'
-  // using Prisma.UserCreateInput ensures we don't miss required fields
   create(data: Prisma.UserCreateInput) {
     return prisma.user.create({ 
       data: data 
