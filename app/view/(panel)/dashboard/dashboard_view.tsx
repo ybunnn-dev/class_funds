@@ -1,18 +1,22 @@
 "use client";
 
 import { DollarSign, TrendingUp, TrendingDown, Users, Wallet } from "lucide-react";
+import { useSession } from "next-auth/react";
 
 export default function DashboardPage() {
+  const { data: session } = useSession();
+
+  const userName = session?.user?.name || "Student";
+
   return (
     <div className="space-y-8">
       <div>
         <h2 className="text-2xl font-bold text-text_heavy">Overview</h2>
         <p className="text-text_light text-sm mt-1">
-          Welcome back, <span className="font-semibold text-light_brown">Juan Cruz</span>. Here's what's happening with your class funds.
+          Welcome back, <span className="font-semibold text-light_brown">{userName}</span>. Here's what's happening with your class funds.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Card 1: Total Collected */}
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between">
             <div>

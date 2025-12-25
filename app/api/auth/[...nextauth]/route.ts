@@ -19,19 +19,19 @@ const { handlers, auth, signIn, signOut } = NextAuth({
         try {
           if (!credentials?.email || !credentials?.password) return null;
 
-          console.log("🔍 Looking up user:", credentials.email);
+          console.log("Looking up user:", credentials.email);
 
           const user = await prisma.user.findUnique({
             where: { email: credentials.email as string },
             include: { section: true },
           });
 
-          console.log("👤 User found:", !!user);
+          console.log("User found:", !!user);
 
           if (user && await bcrypt.compare(credentials.password as string, user.password)) {
             return {
               id: user.id.toString(),
-              name: `${user.firstName} ${user.lastName}`,
+              name: `${user.firstName} ${user.middleName} ${user.lastName} ${user.suffix ?? ''}`,
               email: user.email,
               section: user.section?.name, 
             };
