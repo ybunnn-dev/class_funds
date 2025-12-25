@@ -15,9 +15,9 @@ export default function StudentsTable() {
         <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
           <div className="relative flex-grow sm:flex-grow-0">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-            <input 
-              type="text" 
-              placeholder="Search student..." 
+            <input
+              type="text"
+              placeholder="Search student..."
               className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all"
             />
           </div>
@@ -40,17 +40,17 @@ export default function StudentsTable() {
         <table className="w-full text-left text-sm">
           <thead className="bg-gray-50 text-text_light uppercase text-xs font-semibold">
             <tr>
-                <th className="px-6 py-3">Student Name</th>
-                <th className="px-6 py-3">Previous Transaction</th>
-                <th className="px-6 py-3">Last Transaction Date</th>
-                <th className="px-6 py-3">Paid Contributions</th>
-                <th className="px-6 py-3">Date Added</th>
+              <th className="px-6 py-3">Student Name</th>
+              <th className="px-6 py-3">Previous Transaction</th>
+              <th className="px-6 py-3">Last Transaction Date</th>
+              <th className="px-6 py-3">Paid Contributions</th>
+              <th className="px-6 py-3">Date Added</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
-            
-            <tr 
-              onClick={() => router.push('../student/profile')} 
+
+            <tr
+              onClick={() => router.push('../student/profile')}
               className="hover:bg-gray-50/50 transition-colors cursor-pointer"
             >
               <td className="px-6 py-4 font-medium text-text_heavy">John Doe</td>
@@ -75,7 +75,7 @@ export default function StudentsTable() {
             <tr className="hover:bg-gray-50/50 transition-colors cursor-pointer">
               <td className="px-6 py-4 font-medium text-text_heavy">Juan De la Cruz</td>
               <td className="px-6 py-4 font-medium text-green-600">Christmas Party</td>
-               <td className="px-6 py-4 text-text_semi flex items-center gap-1">
+              <td className="px-6 py-4 text-text_semi flex items-center gap-1">
                 <Calendar size={14} className="text-text_light" />
                 Jan 15, 2025
               </td>
@@ -93,12 +93,12 @@ export default function StudentsTable() {
             </tr>
 
             <tr className="hover:bg-gray-50/50 transition-colors cursor-pointer">
-                <td className="px-6 py-4 font-medium text-text_heavy">Maria Santos</td>
-                <td className="px-6 py-4 font-medium text-green-600">Christmas Party</td>
-                <td className="px-6 py-4 text-text_light line-through flex items-center gap-1">
-                    <Calendar size={14} />
-                    Oct 10, 2024
-                </td>
+              <td className="px-6 py-4 font-medium text-text_heavy">Maria Santos</td>
+              <td className="px-6 py-4 font-medium text-green-600">Christmas Party</td>
+              <td className="px-6 py-4 text-text_light line-through flex items-center gap-1">
+                <Calendar size={14} />
+                Oct 10, 2024
+              </td>
               <td className="px-6 py-4">
                 <div className="flex items-center gap-2">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
@@ -110,17 +110,17 @@ export default function StudentsTable() {
                 </div>
               </td>
               <td className="px-6 py-4 text-text_light">Oct 15, 2024</td>
-             
+
             </tr>
           </tbody>
         </table>
       </div>
       <div className="bg-gray-50 px-6 py-3 border-t border-gray-100 flex items-center justify-between">
-          <span className="text-xs text-text_light">Showing 3 active contributions</span>
-          <div className="flex gap-2">
-            <button className="text-xs font-medium text-text_semi hover:text-text_heavy disabled:opacity-50">Previous</button>
-            <button className="text-xs font-medium text-text_semi hover:text-text_heavy">Next</button>
-          </div>
+        <span className="text-xs text-text_light">Showing 3 active contributions</span>
+        <div className="flex gap-2">
+          <button className="text-xs font-medium text-text_semi hover:text-text_heavy disabled:opacity-50">Previous</button>
+          <button className="text-xs font-medium text-text_semi hover:text-text_heavy">Next</button>
+        </div>
       </div>
     </div>
   );
