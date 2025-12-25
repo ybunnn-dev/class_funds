@@ -91,7 +91,7 @@ export default function ContributionDetailPage() {
                     </div>
                 </div>
                 <div className="col-span-1 grid grid-cols-1 gap-3">
-                    <div className="col-span-1 bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="col-span-1 bg-white px-6 pt-6 pb-1 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                         <div className="flex items-center justify-between">
                             <div>
                                 <p className="text-sm font-medium text-text_light">Total Expenses</p>
