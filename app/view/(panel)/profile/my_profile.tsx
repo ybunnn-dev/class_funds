@@ -1,13 +1,60 @@
 "use client";
 
 import { DollarSign, Wallet, Users, CalendarCheck } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
 import HistoryTable from "./components/history";
 import ProfileCard from './components/profile_card';
 
+interface UserProfile {
+  id: number;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  suffix: string;
+  email: string;
+  createdAt: string;
+  section: {
+    name: string;
+  } | null;
+}
+
 export default function ProfilePage() {
+    const { data: session } = useSession();
+    const [profile, setProfile] = useState<UserProfile | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (session?.user) {
+            fetch("/api/profile")
+                .then(async (res) => {
+                    // 1. Check if the status is NOT 200 OK
+                    if (!res.ok) {
+                        const text = await res.text(); // Read the raw text (might be an HTML error page)
+                        throw new Error(`Server returned ${res.status}: ${text}`);
+                    }
+                    // 2. If it is 200, parse as JSON
+                    return res.json();
+                })
+                .then((data) => {
+                    setProfile(data);
+                    setLoading(false);
+                })
+                .catch((err) => {
+                    // 3. Look at your browser console now!
+                    console.error("DEBUGGING PROFILE FETCH:", err); 
+                    setLoading(false);
+                });
+        }
+    }, [session]);
+
+    if (loading) {
+        return <div className="p-6 text-text_light animate-pulse">Loading profile data...</div>;
+    }
+
     return (
         <div className="grid grid-cols-1 gap-6">
-            <ProfileCard />
+            <ProfileCard data={profile} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between h-40">
                     <div className="flex justify-between items-start">

@@ -32,6 +32,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             return {
               id: user.id.toString(),
               name: `${user.firstName} ${user.middleName} ${user.lastName} ${user.suffix ?? ''}`,
+              firstName: user.firstName,
+              middleName: user.middleName,
+              lastName: user.lastName,
+              suffix: user.suffix,
               email: user.email,
               section: user.section?.name, 
             };
