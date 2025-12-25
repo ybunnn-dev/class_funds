@@ -5,16 +5,12 @@ import { DollarSign, TrendingUp, TrendingDown, Users, Wallet } from "lucide-reac
 export default function DashboardPage() {
   return (
     <div className="space-y-8">
-      
-      {/* HEADER SECTION */}
       <div>
         <h2 className="text-2xl font-bold text-text_heavy">Overview</h2>
         <p className="text-text_light text-sm mt-1">
           Welcome back, <span className="font-semibold text-light_brown">Juan Cruz</span>. Here's what's happening with your class funds.
         </p>
       </div>
-
-      {/* STATS GRID */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Card 1: Total Collected */}
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
@@ -32,8 +28,6 @@ export default function DashboardPage() {
             +12% from last month
           </div>
         </div>
-
-        {/* Card 2: Expenses */}
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between">
             <div>
@@ -48,8 +42,6 @@ export default function DashboardPage() {
             Printing & Event materials
           </div>
         </div>
-
-        {/* Card 3: Current Balance */}
         <div className="bg-gradient-to-br from-text_heavy to-text_semi p-6 rounded-xl shadow-lg text-white">
           <div className="flex items-center justify-between">
             <div>
@@ -65,14 +57,12 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
-
-      {/* RECENT TRANSACTIONS TABLE */}
       <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
           <h3 className="font-semibold text-text_heavy">Recent Transactions</h3>
           <button className="text-sm text-light_brown font-medium hover:underline">View All</button>
         </div>
-        
+
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead className="bg-gray-50 text-text_light uppercase text-xs font-semibold">
@@ -85,7 +75,6 @@ export default function DashboardPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {/* Sample Row 1 */}
               <tr className="hover:bg-gray-50/50">
                 <td className="px-6 py-4 font-medium text-text_heavy">Maria Santos</td>
                 <td className="px-6 py-4 text-text_semi">Christmas Party Contribution</td>
@@ -97,7 +86,6 @@ export default function DashboardPage() {
                   </span>
                 </td>
               </tr>
-              {/* Sample Row 2 */}
               <tr className="hover:bg-gray-50/50">
                 <td className="px-6 py-4 font-medium text-text_heavy">Class Treasurer</td>
                 <td className="px-6 py-4 text-text_semi">Photocopy Paper Purchase</td>
@@ -109,14 +97,14 @@ export default function DashboardPage() {
                   </span>
                 </td>
               </tr>
-              {/* Sample Row 3 */}
+
               <tr className="hover:bg-gray-50/50">
                 <td className="px-6 py-4 font-medium text-text_heavy">Pedro Penduko</td>
                 <td className="px-6 py-4 text-text_semi">Late Penalty</td>
                 <td className="px-6 py-4 text-text_light">Dec 15, 2024</td>
                 <td className="px-6 py-4 font-medium text-green-600">+ ₱ 50.00</td>
                 <td className="px-6 py-4">
-                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
                     Pending
                   </span>
                 </td>

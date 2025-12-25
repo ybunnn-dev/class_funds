@@ -123,8 +123,6 @@ export default function EditProfileModal() {
                             </div>
 
                         </div>
-
-                        {/* Footer */}
                         <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 px-6 py-4 bg-gray-50 border-t border-gray-100">
                             <button
                                 onClick={() => setIsOpen(false)}
