@@ -60,45 +60,57 @@ export default function AddStudentModal() {
             <div className="p-6 space-y-4">
               
               {/* Event Name */}
-              <div>
-                <label className="block text-sm font-medium text-text_heavy mb-1">Contribution Name</label>
-                <input 
-                  type="text" 
-                  placeholder="e.g. Christmas Party" 
-                  className="w-full rounded-lg border-gray-200 text-sm focus:border-text_heavy focus:ring-text_heavy"
-                />
-              </div>
-
-              {/* Amount & Date Grid - Responsive (Stacks on mobile) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-text_heavy mb-1">Amount per Head</label>
-                  <div className="relative">
-                    <span className="absolute left-3 top-2.5 text-gray-400 text-sm">₱</span>
-                    <input 
-                      type="number" 
-                      placeholder="200.00" 
-                      className="w-full pl-7 rounded-lg border-gray-200 text-sm focus:border-text_heavy focus:ring-text_heavy"
-                    />
-                  </div>
+                   <label className="block text-sm font-medium text-text_heavy mb-1">First Name <span className="text-red-500">*</span></label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. John" 
+                    className="w-full rounded-lg border-gray-200 text-sm focus:border-text_heavy focus:ring-text_heavy"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-text_heavy mb-1">Due Date</label>
+                  <label className="block text-sm font-medium text-text_heavy mb-1">Last Name <span className="text-red-500">*</span></label>
                   <input 
-                    type="date" 
+                    type="text" 
+                    placeholder="e.g. Doe" 
                     className="w-full rounded-lg border-gray-200 text-sm focus:border-text_heavy focus:ring-text_heavy"
                   />
                 </div>
               </div>
 
+              {/* Amount & Date Grid - Responsive (Stacks on mobile) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-text_heavy mb-1">Middle Name <span className="text-red-500">*</span></label>
+                  <div className="relative">
+                    <input 
+                      type="text" 
+                      placeholder="e.g. Smith" 
+                      className="w-full rounded-lg border-gray-200 text-sm focus:border-text_heavy focus:ring-text_heavy"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-text_heavy mb-1">Suffix</label>
+                  <div className="relative">
+                    <input 
+                      type="text" 
+                      placeholder="e.g. Jr." 
+                      className="w-full rounded-lg border-gray-200 text-sm focus:border-text_heavy focus:ring-text_heavy"
+                    />
+                  </div>
+                </div>
+              </div>
+
               {/* Type Select */}
               <div>
-                <label className="block text-sm font-medium text-text_heavy mb-1">Type</label>
+                <label className="block text-sm font-medium text-text_heavy mb-1">Pronouns <span className="text-red-500">*</span></label>
                 <select className="w-full rounded-lg border-gray-200 text-sm focus:border-text_heavy focus:ring-text_heavy text-gray-600">
-                  <option>Event Fund</option>
-                  <option>Class Materials</option>
-                  <option>Penalty/Fine</option>
-                  <option>Miscellaneous</option>
+                  <option>Select Pronouns</option>
+                  <option>He/Him</option>
+                  <option>She/Her</option>
+                  <option>They/Them</option>
                 </select>
               </div>
 
