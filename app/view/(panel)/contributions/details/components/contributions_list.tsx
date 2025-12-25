@@ -13,7 +13,7 @@ export default function ContributionList() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input 
               type="text" 
-              placeholder="Search event or student..." 
+              placeholder="Search student..." 
               className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all"
             />
           </div>
@@ -55,7 +55,7 @@ export default function ContributionList() {
               <td className="px-6 py-4 text-gray-400 text-xs">Dec 20, 2024</td>
               <td className="px-6 py-4">
                 <div className="flex items-center justify-center gap-2">
-                    <button title="View Event" className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 rounded-md transition-colors">
+                    <button title="View Transaction" className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 rounded-md transition-colors">
                         <Eye size={18} />
                     </button>
                     <button title="Update Status" className="p-1.5 text-gray-400 hover:text-green-500 hover:bg-green-50 rounded-md transition-colors">
@@ -76,7 +76,7 @@ export default function ContributionList() {
               <td className="px-6 py-4 text-gray-400 text-xs">Dec 22, 2024</td>
               <td className="px-6 py-4">
                 <div className="flex items-center justify-center gap-2">
-                    <button title="View Event" className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 rounded-md transition-colors">
+                    <button title="View Transaction" className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 rounded-md transition-colors">
                         <Eye size={18} />
                     </button>
                     <button title="Update Status" className="p-1.5 text-gray-400 hover:text-green-500 hover:bg-green-50 rounded-md transition-colors">
@@ -97,7 +97,7 @@ export default function ContributionList() {
               <td className="px-6 py-4 text-gray-400 text-xs">Dec 10, 2024</td>
               <td className="px-6 py-4">
                 <div className="flex items-center justify-center gap-2">
-                    <button title="View Event" className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 rounded-md transition-colors">
+                    <button title="View Transaction" className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 rounded-md transition-colors">
                         <Eye size={18} />
                     </button>
                     <button title="Update Status" className="p-1.5 text-gray-400 hover:text-green-500 hover:bg-green-50 rounded-md transition-colors">
