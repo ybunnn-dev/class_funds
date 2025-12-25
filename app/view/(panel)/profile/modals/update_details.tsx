@@ -46,7 +46,7 @@ export default function EditProfileModal() {
                     />
                     <div className="relative bg-white rounded-xl shadow-xl w-full max-w-md overflow-hidden animate-modal">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-                            <h3 className="font-semibold text-lg text-text_heavy">Add Student</h3>
+                            <h3 className="font-semibold text-lg text-text_heavy">Update Profile</h3>
                             <button
                                 onClick={() => setIsOpen(false)}
                                 className="text-gray-400 hover:text-gray-600 transition-colors p-1 hover:bg-gray-100 rounded-full"
@@ -113,6 +113,15 @@ export default function EditProfileModal() {
                                 </select>
                             </div>
 
+                            <div>
+                                <label className="block text-sm font-medium text-text_heavy mb-1">Section/Block Name<span className="text-red-500">*</span></label>
+                                <input
+                                    type="text"
+                                    placeholder="e.g. Christmas Party"
+                                    className="w-full rounded-lg border-gray-200 text-sm focus:border-text_heavy focus:ring-text_heavy"
+                                />
+                            </div>
+
                         </div>
 
                         {/* Footer */}
@@ -127,7 +136,7 @@ export default function EditProfileModal() {
                                 onClick={() => setIsOpen(false)}
                                 className="px-4 py-2 text-sm font-medium text-white bg-text_heavy rounded-lg hover:bg-opacity-90 transition-colors w-full sm:w-auto"
                             >
-                                Create Event
+                                Save Changes
                             </button>
                         </div>
 
