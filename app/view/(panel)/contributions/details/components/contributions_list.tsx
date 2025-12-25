@@ -34,7 +34,7 @@ export default function ContributionList() {
         <table className="w-full text-left text-sm">
           <thead className="bg-gray-50 text-gray-500 uppercase text-xs font-semibold">
             <tr>
-              <th className="px-6 py-3">Event Name</th>
+              <th className="px-6 py-3">Student Name</th>
               <th className="px-6 py-3">Amount</th>
               <th className="px-6 py-3">Status</th>
               <th className="px-6 py-3">Due Date</th>
@@ -44,7 +44,7 @@ export default function ContributionList() {
           </thead>
           <tbody className="divide-y divide-gray-100">
             <tr className="hover:bg-gray-50/50 transition-colors group">
-              <td className="px-6 py-4 font-medium text-gray-800">Christmas Party</td>
+              <td className="px-6 py-4 font-medium text-gray-800">John Doe</td>
               <td className="px-6 py-4 font-medium text-gray-600">₱ 200.00</td>
               <td className="px-6 py-4">
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700 border border-green-200">
@@ -65,7 +65,7 @@ export default function ContributionList() {
               </td>
             </tr>
             <tr className="hover:bg-gray-50/50 transition-colors group">
-              <td className="px-6 py-4 font-medium text-gray-800">Class T-Shirt</td>
+              <td className="px-6 py-4 font-medium text-gray-800">Pedro Penduko</td>
               <td className="px-6 py-4 font-medium text-gray-600">₱ 350.00</td>
               <td className="px-6 py-4">
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200">
@@ -86,7 +86,7 @@ export default function ContributionList() {
               </td>
             </tr>
             <tr className="hover:bg-gray-50/50 transition-colors group">
-              <td className="px-6 py-4 font-medium text-gray-800">Final Project Fund</td>
+              <td className="px-6 py-4 font-medium text-gray-800">Maria Cruz</td>
               <td className="px-6 py-4 font-medium text-gray-600">₱ 150.00</td>
               <td className="px-6 py-4">
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-700 border border-red-200">

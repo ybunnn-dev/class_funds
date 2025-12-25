@@ -12,13 +12,13 @@ export default function ContributionProfileCard() {
 
       <h1 className="text-xl font-bold text-text_heavy text-center">Christmas Party</h1>
       <h3 className="text-sm font-medium text-gray-500 mt-1 text-center">Ongoing</h3>
-      <p className="text-xs text-gray-400 mt-1 mb-6 text-center">Joined December 2024</p>
+      <p className="text-xs text-gray-400 mt-1 mb-6 text-center">Created December 2024</p>
       
       <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-text_heavy rounded-lg transition-colors font-medium">
         <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center border border-gray-200">
           <Edit2 size={14} className="text-text_light" />
         </div>
-        Edit Profile
+        Edit Event
       </button>
 
     </div>
