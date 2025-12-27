@@ -83,7 +83,6 @@ export default function ProfileCard({ data }: ProfileCardProps) {
           <div className="mt-4 lg:mt-6 lg:ml-auto">
             <UpdateProfileModal />
           </div>
-
         </div>
       </div>
     </div>
